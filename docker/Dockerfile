@@ -9,6 +9,8 @@ CMD       ["gunicorn", "--bind", "0.0.0.0:8000", "wsgi"]
 EXPOSE    8000
 
 COPY      config/requirements.txt /opt/newsblur/
+COPY      config/sources.list /etc/apt/
+COPY      config/pip.conf /etc/
 RUN       set -ex \
           && rundDeps=' \
                   libpq5 \

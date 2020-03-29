@@ -16,6 +16,8 @@ services:
     networks:
       - front
       - back
+    volumes:
+      - ./:/opt/newsblur
 
   postgres:
     image: postgres:9

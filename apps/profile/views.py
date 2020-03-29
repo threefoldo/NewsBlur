@@ -118,6 +118,7 @@ def signup(request):
         result = response.json()
         if not result['success']:
             recaptcha_error = "Really, please hit the \"I'm not a robot\" button."
+    recaptcha_error = None
 
     if request.method == "POST":
         form = SignupForm(data=request.POST, prefix="signup")
